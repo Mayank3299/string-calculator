@@ -25,5 +25,9 @@ RSpec.describe 'String Calculator' do
     it 'throw an error when negative numbers are included' do
       expect { StringCalculator.add('1,-2,3') }.to raise_error('negative numbers not allowed -2')
     end
+
+    it 'return all passed negative numbers separated by comma' do
+      expect { StringCalculator.add('1,-2,3,-3,-8') }.to raise_error('negative numbers not allowed -2, -3, -8')
+    end
   end
 end

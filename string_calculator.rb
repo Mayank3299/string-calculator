@@ -12,7 +12,7 @@ class StringCalculator
     digits = processed_str.split(delimeter).map(&:to_i)
     negatives = digits.select(&:negative?)
     puts negatives
-    raise "negative numbers not allowed #{negatives.join}" unless negatives.empty?
+    raise "negative numbers not allowed #{negatives.join(', ')}" unless negatives.empty?
 
     digits.sum
   end
