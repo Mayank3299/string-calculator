@@ -9,6 +9,11 @@ class StringCalculator
       delimeter = str_parts[0][2..]
     end
     processed_str = input_str.tr('\n', delimeter)
-    processed_str.split(delimeter).map(&:to_i).sum
+    digits = processed_str.split(delimeter).map(&:to_i)
+    negatives = digits.select(&:negative?)
+    puts negatives
+    raise "negative numbers not allowed #{negatives.join}" unless negatives.empty?
+
+    digits.sum
   end
 end
