@@ -13,5 +13,9 @@ RSpec.describe 'String Calculator' do
     it 'returns the sum of the numbers in the input string' do
       expect(StringCalculator.add('1,8')).to eq(9)
     end
+
+    it 'return the sum of numbers with both newline and comma' do
+      expect(StringCalculator.add('1\n2,3')).to eq(6)
+    end
   end
 end

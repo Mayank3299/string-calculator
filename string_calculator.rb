@@ -3,6 +3,7 @@ class StringCalculator
     return 0 if input_str.empty?
     return input_str.to_i if input_str.length == 1
 
-    input_str.split(',').map(&:to_i).sum
+    processed_str = input_str.tr('\n', ',')
+    processed_str.split(',').map(&:to_i).sum
   end
 end
